@@ -92,6 +92,7 @@
     EDITOR = "nano";
     VISUAL = "nano";
     KUBE_EDITOR = "nano";
+    NIXOS_OZONE_WL = "1";  # VSCode Wayland Support
   };
     
   # Packages
@@ -102,6 +103,7 @@
     firefox-wayland
     git
     gnome3.adwaita-icon-theme  # Supports 3rd pary icons (like Lutris)
+    vscode
   ];
 
 
