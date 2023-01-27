@@ -1,0 +1,10 @@
+#!/bin/sh
+
+timestamp=$(date +%s)
+
+nix flake update .
+git add -A
+git commit -m "Updated the flake lock file @${timestamp}"
+# git push
+
+
