@@ -6,6 +6,6 @@ dir=$(pwd)
 nix flake update ${dir}
 git add -A
 git commit -m "Updated the flake lock file @${timestamp}"
-# git push
+git push
 
 

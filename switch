@@ -1,5 +1,6 @@
 #!/bin/sh
 
+dir=$(pwd)
 
-sudo nixos-rebuild switch --flake 
+sudo nixos-rebuild switch --flake ${dir}/#$hostname --impure
 
