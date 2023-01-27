@@ -104,6 +104,7 @@
     git
     gnome3.adwaita-icon-theme  # Supports 3rd pary icons (like Lutris)
     vscode
+    python3
   ];
 
 
@@ -158,6 +159,12 @@
     pulse.enable = true;
     jack.enable = true;
     #config.pipewire = {}  # Configuration for Pipewire can be set here
+  };
+  
+  xdg = {
+    portal = {
+      enable = true;
+    };
   };
 
   # Optimization
