@@ -161,6 +161,7 @@
     #config.pipewire = {}  # Configuration for Pipewire can be set here
   };
   
+  # XDG integration
   xdg = {
     portal = {
       enable = true;

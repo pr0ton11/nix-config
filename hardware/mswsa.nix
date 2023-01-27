@@ -68,7 +68,7 @@ in
   hardware.cpu.amd.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true;
   
-  # Enable openGL and vulcan 
+  # Enable openGL and vulkan
   hardware.opengl.package = (pkgs.mesa.override {
     llvmPackages = llvm15.llvmPackages_15;
     enableOpenCL = false;
@@ -76,8 +76,17 @@ in
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
-  hardware.steam-hardware.enable = true;  # Enable Steam UDev profiles for controllers
-  
+  hardware.steam-hardware.enable = true;  # Enable Steam udev profiles for controllers
+
+  # Lutris installation
+  # Flatpak lutris does not work
+  environment.systemPackages = with pkgs; [
+    (lutris.override {
+      extraLibraries =  pkgs: [
+        # List library dependencies here
+      ];
+    })
+  ];
 
   # Basic networking configuration
   networking.hostName = "mswsa";
