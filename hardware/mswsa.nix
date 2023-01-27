@@ -76,7 +76,8 @@ in
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
-  hardware.steam-hardware.enable = true;
+  hardware.steam-hardware.enable = true;  # Enable Steam UDev profiles for controllers
+  
 
   # Basic networking configuration
   networking.hostName = "mswsa";

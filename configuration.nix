@@ -101,6 +101,7 @@
     curl
     firefox-wayland
     git
+    gnome3.adwaita-icon-theme  # Supports 3rd pary icons (like Lutris)
   ];
 
 
