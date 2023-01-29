@@ -8,7 +8,7 @@
 
 
   # Kernel configuration
-  boot.kernelPackages = pkgs.linuxPackages_6_1;
+  boot.kernelPackages = pkgs.linuxPackages_6_1_hardened;
 
   # Bootloader configuration
   boot.loader.grub.enable = true;
@@ -77,7 +77,7 @@
   environment.shells = [ pkgs.zsh ];
   users.users.ms = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" ];
     description = "Marc Singer";
     hashedPassword = "$6$yOQEG.YLfts8U/p3$rLRCN4difqTaYPP9oIvFs4klCIAw2aq3EFKUvfV4671qfuW8p90m7CaPepg6WE9u5CiEHklui/WXO66.U3LCm/";
     shell = pkgs.zsh;
