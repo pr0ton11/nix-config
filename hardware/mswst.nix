@@ -33,7 +33,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/449022ce-cabc-4a31-8c51-6321696e70e9";
+    { device = "/dev/disk/by-uuid/449022ce-cabc-4a31-8c51-6321596e70e9";
       fsType = "ext4";
       options = [ "noatime" "discard" ];
     };
@@ -51,8 +51,9 @@
   hardware.enableRedistributableFirmware = true;
   
   # Power Management
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-
+  # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  services.throttled.enable = lib.mkDefault true;
+  
   # Basic networking configuration
   networking.hostName = "mswst";
   # networking.wireless.enable = true;
