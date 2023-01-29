@@ -8,7 +8,7 @@
 
 
   # Kernel configuration
-  boot.kernelPackages = pkgs.linuxPackages_6_1_hardened;
+  boot.kernelPackages = pkgs.linuxPackages_6_1;
 
   # Bootloader configuration
   boot.loader.grub.enable = true;
