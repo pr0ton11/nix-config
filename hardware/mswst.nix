@@ -8,7 +8,7 @@
   boot.kernelParams = [];
 
   # cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 2000 -y --pbkdf pbkdf2 luksFormat /dev/nvme0n1p3
-  boot.initrd.luks.devices."sys0" = { device = "/dev/disk/by-uuid/17ab0b12-23e9-409e-b2d4-6f8525d8a43b"; allowDiscards = true; };
+  boot.initrd.luks.devices."sys0" = { device = "/dev/disk/by-uuid/82d1fa19-75a0-4ff3-84b3-063e9295b4e6"; allowDiscards = true; };
 
   # mkfs.btrfs -L root /dev/mapper/sys0
   # mount and create subvolumes
@@ -33,13 +33,13 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/96bbf76c-983b-4a23-8ba6-465f970817f5";
+    { device = "/dev/disk/by-uuid/449022ce-cabc-4a31-8c51-6321696e70e9";
       fsType = "ext4";
       options = [ "noatime" "discard" ];
     };
 
   fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/3CFB-10F0";
+    { device = "/dev/disk/by-uuid/6D86-FD1F";
       fsType = "vfat";
       options = [ "noatime" "discard" ];
     };
@@ -51,11 +51,10 @@
   hardware.enableRedistributableFirmware = true;
   
   # Power Management
-  powerManagement.cpuFreqGovenor = lib.mkDefault "powersave";
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   # Basic networking configuration
   networking.hostName = "mswst";
-  networking.wireless.enable = true;
-  networking.wireless.wifi.backend = "iwd";  # Intel WiFi network card
-  networking.networkmanager.enable = true;  # Easier management in gnome
+  # networking.wireless.enable = true;
+  networking.networkmanager.enable = true;  # Easier management for a notebook with WiFi
 }
