@@ -119,7 +119,7 @@
     videoDrivers = [ "amdgpu" ];
     displayManager.gdm.wayland = true;
     libinput.enable = true;
-    layout = "de,ch";
+    layout = "ch";
     dpi = 96;
     excludePackages = [ pkgs.xterm ];
   };
