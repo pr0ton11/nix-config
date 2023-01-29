@@ -1,7 +1,7 @@
 { config, lib, modulesPath, pkgs,  ... }:
 
 {
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [  ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -50,9 +50,12 @@
   hardware.cpu.intel.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true;
   
+  # Power Management
+  powerManagement.cpuFreqGovenor = lib.mkDefault "powersave";
+
   # Basic networking configuration
   networking.hostName = "mswst";
   networking.wireless.enable = true;
-  networking.wireless.wifi.backend = "iwd";
-  networking.networkmanager.enable = true;
+  networking.wireless.wifi.backend = "iwd";  # Intel WiFi network card
+  networking.networkmanager.enable = true;  # Easier management in gnome
 }
