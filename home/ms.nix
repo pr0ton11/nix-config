@@ -31,7 +31,7 @@
   };
   
   # HFTM Java Development
-  programs.java = { enable = true; package = pkgs.openjdk19; };
+  programs.java = { enable = true; package = pkgs.openjdk17; };
   
   home.packages = with pkgs; [
     maven  # HFTM Java Development
