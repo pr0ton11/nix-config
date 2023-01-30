@@ -36,7 +36,9 @@
   home.packages = with pkgs; [
     maven  # HFTM Java Development
     ansible
+    sshpass
     kubectl
+    krew
     sshpass
     plex-media-player
   ];
