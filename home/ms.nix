@@ -1,12 +1,15 @@
 { config, pkgs, ...}:
 
+let 
+  hostname = builtins.getEnv "HOSTNAME";
+in
 {
   home.username = "ms";
   home.homeDirectory = "/home/ms";
 
   home.stateVersion = "22.11";
 
-  home.file.".background-image".source = config.lib.file.mkOutOfStoreSymlink "./wallpaper/${config.networking.hostName}";
+  home.file.".background-image".source = config.lib.file.mkOutOfStoreSymlink "./wallpaper/${hostname}";
 
   programs.home-manager.enable = true;
   
