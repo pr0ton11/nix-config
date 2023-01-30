@@ -46,6 +46,7 @@
               home-manager.users.ms = {
                 imports = [
                   ./home/ms.nix
+                  ./home/mswsa.nix
                 ];
               };
             }

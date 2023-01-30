@@ -1,15 +1,10 @@
 { self, config, pkgs, ...}:
 
-let 
-  hostname = builtins.getEnv "HOSTNAME";
-in
 {
   home.username = "ms";
   home.homeDirectory = "/home/ms";
 
   home.stateVersion = "22.11";
-
-  home.file.".config/wall".source = config.lib.file.mkOutOfStoreSymlink "./wallpaper/${hostname}";
 
   programs.home-manager.enable = true;
   
@@ -29,8 +24,9 @@ in
   # HFTM Java Development
   programs.java = { enable = true; package = pkgs.openjdk19; };
   
-  home.packages = [
-    pkgs.maven
+  home.packages = with pkgs; [
+    maven  # HFTM Java Development
+    ansible
+    sshpass
+    plex-media-player
   ];
-
-}
