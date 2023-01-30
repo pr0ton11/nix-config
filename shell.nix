@@ -1,9 +1,9 @@
 { pkgs }:
 
 let
-  nix-config-upgrade = pkgs.writeShellScriptBin "switch" (builtins.readFile ./switch);
+  nix-config-switch = pkgs.writeShellScriptBin "switch" (builtins.readFile ./switch);
 in
 with pkgs;
 mkShell {
-  packages = [ nix-config-upgrade ];
+  packages = [ nix-config-switch ];
 }

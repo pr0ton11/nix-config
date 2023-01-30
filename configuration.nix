@@ -3,7 +3,7 @@
 {
   imports =
     [
-      # <home-manager/nixos>
+      ./shell.nix
     ];
 
 
