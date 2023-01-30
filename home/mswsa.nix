@@ -1,4 +1,4 @@
-{ config, lib, pkgs, user, ... }
+{ config, lib, pkgs, user, ... }:
 
 {
   home.file.".config/wall".source = ./wallpaper/mswsa;
