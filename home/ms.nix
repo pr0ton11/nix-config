@@ -30,3 +30,5 @@
     sshpass
     plex-media-player
   ];
+
+}
