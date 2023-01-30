@@ -211,7 +211,7 @@ in
         {
           publicKey = "wt4YLrF3A8Iu25OxqWWgr17bnxK/U4qomIOVpwq88lY=";
           allowedIPs = [ "10.113.48.0/24" "10.113.50.0/24" "10.113.64.0/24" "::/0" ];
-          endpoint = "vpn.pr0.guru:52420";
+          endpoint = "vpn4.pr0.guru:52420";
           persistentKeepalive = 25;
         }
       ];
