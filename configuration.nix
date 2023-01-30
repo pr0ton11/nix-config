@@ -106,7 +106,7 @@ in
     gnome3.adwaita-icon-theme  # Supports 3rd pary icons (like Lutris)
     vscode
     python3
-    nix-config-switch  # Selfmade switch script
+    nix-config-switch  # Switch script to update the system automatically
   ];
 
 
@@ -203,7 +203,7 @@ in
   };
 
   # Wireguard connection to pr0
-  systemd.services.wg-quick-pr0.wantedBy = lib.mkForce [ ];
+  systemd.services.wg-quick-pr0.wantedBy = lib.mkForce [ ];  # Remove autostart from interfaces
   networking.wg-quick.interfaces = {
     pr0 = {
       address = [ "10.113.64.2/24" "2001:1680:6003:64::2/64" ];
