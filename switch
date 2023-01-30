@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ -z $1 ]; then
-    action = "switch"
+    export action = "switch"
 else
-    action = "$1"
+    export action = "$1"
 fi
 
 # Set correct directory, no matter where this is called from
