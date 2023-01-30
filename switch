@@ -7,7 +7,10 @@ else
 fi
 
 # Set correct directory, no matter where this is called from
-dir=$(dirname $0)
+script=$(readlink -f "$0")
+dir=$(dirname "$SCRIPT")
+# Ensure that we are in the script path
+cd ${dir}
 # Set timestamp for automated commit message
 timestamp=$(date +%s)
 # Update current branch
