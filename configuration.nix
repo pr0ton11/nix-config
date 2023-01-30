@@ -206,7 +206,7 @@ in
   networking.wg-quick.interfaces = {
     wg0 = {
       address = [ "10.113.64.2/24" "2001:1680:6003:64::2/64" ];
-      privateKeyFile = "/root/wireguard.pk";
+      privateKeyFile = "/home/ms/wireguard.pk";
       peers = [
         {
           publicKey = "wt4YLrF3A8Iu25OxqWWgr17bnxK/U4qomIOVpwq88lY=";
