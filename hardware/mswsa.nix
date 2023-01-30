@@ -73,6 +73,10 @@ in
     llvmPackages = llvm15.llvmPackages_15;
     enableOpenCL = false;
   }).drivers;
+  hardware.opengl.extraPackages = with pkgs; [
+      vaapiVdpau
+      libvdpau-va-gl
+  ];
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
