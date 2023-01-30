@@ -1,9 +1,24 @@
 #!/bin/sh
 
+if [ -z $1 ]; then
+    action = "switch"
+else
+    action = "$1"
+fi
+
 # Set correct directory, no matter where this is called from
 dir=$(dirname $0)
-# Update the git repository before switching to the new version
-source $dir/update
+# Set timestamp for automated commit message
+timestamp=$(date +%s)
+# Update current branch
+git pull
+# Update flake with latest software
+nix flake update ${dir}
+# Add everything to the git tree
+git add -A
+# Commit updates
+git commit -m "Updated the flake lock file @${timestamp}"
+# Push changes
+git push
 # Switching to the new version
-sudo nixos-rebuild switch --flake ${dir}/#$hostname --impure
-
+sudo nixos-rebuild ${action} --flake ${dir}/#${hostname} --impure
