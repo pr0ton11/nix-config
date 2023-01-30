@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 
 let
   nix-config-switch = pkgs.writeShellScriptBin "switch" (builtins.readFile ./switch);
