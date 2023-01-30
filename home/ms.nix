@@ -9,7 +9,7 @@ in
 
   home.stateVersion = "22.11";
 
-  home.file.".background-image".source = builtins.path { path = "./wallpaper/${hostname}" };
+  home.file.".background-image".source = builtins.path { path = "./wallpaper/${hostname}"; };
 
   programs.home-manager.enable = true;
   
