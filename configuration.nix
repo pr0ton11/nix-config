@@ -88,12 +88,12 @@
   };
   # Environment
   environment.variables = {
+    HOSTNAME = config.networking.hostName;
     TERMINAL = "alacritty";
     EDITOR = "nano";
     VISUAL = "nano";
     KUBE_EDITOR = "nano";
     NIXOS_OZONE_WL = "1";  # VSCode Wayland Support
-    HOSTNAME = config.networking.hostname;
   };
     
   # Packages
