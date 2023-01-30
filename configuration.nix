@@ -4,11 +4,7 @@ let
    nix-config-switch = pkgs.writeShellScriptBin "switch" (builtins.readFile ./switch);
 in
 {
-  imports =
-    [
-      ./shell.nix
-    ];
-
+  imports = [];
 
   # Kernel configuration
   boot.kernelPackages = pkgs.linuxPackages_6_1;
