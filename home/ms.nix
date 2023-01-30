@@ -1,4 +1,4 @@
-{ self, config, pkgs, ...}:
+{ sf, config, pkgs, ...}:
 
 let 
   hostname = builtins.getEnv "HOSTNAME";
@@ -9,7 +9,7 @@ in
 
   home.stateVersion = "22.11";
 
-  home.file.".background-image".source = "${self}/wallpaper/${hostname}";
+  home.file.".background-image".source = "${sf}/wallpaper/${hostname}";
 
   programs.home-manager.enable = true;
   

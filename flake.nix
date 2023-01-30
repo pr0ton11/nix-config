@@ -17,12 +17,12 @@
         config.allowUnfree = true;  # Allow nonfree packages to be installed
       };
       lib = nixpkgs.lib;
-      inherit self;
+      sf = self;
     in {
       nixosConfigurations = {
         mswsa = lib.nixosSystem {
           inherit system;
-          inherit self;
+          inherit sf;
           modules = [
 	    ./hardware/mswsa.nix
             ./configuration.nix
@@ -39,7 +39,7 @@
         };
         mswsm = lib.nixosSystem {
           inherit system;
-          inherit self;
+          inherit sf;
           modules = [
 	    ./hardware/mswsm.nix
             ./configuration.nix
@@ -56,7 +56,7 @@
         };
         mswst = lib.nixosSystem {
           inherit system;
-          inherit self;
+          inherit sf;
           modules = [
 	    ./hardware/mswst.nix
             ./configuration.nix
