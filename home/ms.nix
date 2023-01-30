@@ -6,6 +6,15 @@
 
   home.stateVersion = "22.11";
 
+  dconf.settings = {
+    "org/gnome/desktop/background" = {
+        "picture-uri" = "/home/ms/.background-image";
+    };
+    "org/gnome/desktop/screensaver" = {
+        "picture-uri" = "/home/ms/.background-image";
+    };
+  };
+
   programs.home-manager.enable = true;
   
   programs.git = {
