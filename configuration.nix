@@ -93,6 +93,7 @@
     VISUAL = "nano";
     KUBE_EDITOR = "nano";
     NIXOS_OZONE_WL = "1";  # VSCode Wayland Support
+    HOSTNAME = networking.hostname;
   };
     
   # Packages
