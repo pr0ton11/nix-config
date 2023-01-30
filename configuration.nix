@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+   nix-config-switch = pkgs.writeShellScriptBin "switch" (builtins.readFile ./switch);
+in
 {
   imports =
     [
@@ -106,6 +109,7 @@
     gnome3.adwaita-icon-theme  # Supports 3rd pary icons (like Lutris)
     vscode
     python3
+    nix-config-switch  # Selfmade switch script
   ];
 
 
