@@ -10,7 +10,7 @@ let
     };
   };
   staging = import (builtins.fetchTarball { url = "https://github.com/nixos/nixpkgs/tarball/staging-next"; sha256 = "0dp2jakn0rpdvcsxzbpg37ifqh2lzcbdm2ycsqrs8sjdfrl7bj2m"; } ) { config = config.nixpkgs.config; };
-  llvm15 = import (builtins.fetchTarball { url = "https://github.com/rrbutani/nixpkgs/tarball/feature/llvm-15"; sha256 = "0dp2jakn0rpdvcsxzbpg37ifqh2lzcbdm2ycsqrs8sjdfrl7bj2m"; } ) { config = config.nixpkgs.config; };
+  llvm15 = import (pkgs.fetchFromGitHub { owner = "rrbutani"; repo="nixpkgs"; rev="31db9e9d75d680ae4b747e7c181c12d45ca236be"; sha256 = "039hc11n3yhncv63dhqask89qkk4i0mfydp0jczcmn6a9pk9c7yg"; } ) { config = config.nixpkgs.config; };
 in
 {
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
@@ -91,5 +91,6 @@ in
   # Basic networking configuration
   networking.hostName = "mswsa";
   networking.wireless.enable = false;
-  networking.interfaces.enp7s0.useDHCP = true;  
+  networking.interfaces.enp7s0.useDHCP = true;
+
 }

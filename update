@@ -1,11 +1,18 @@
 #!/bin/sh
 
 timestamp=$(date +%s)
-dir=$(pwd)
+dir=$(dirname $0)
 
+# Update current branch
+git pull
+
+# Update flake with latest software
 nix flake update ${dir}
+# Add everything to the git tree
 git add -A
+# Commit updates
 git commit -m "Updated the flake lock file @${timestamp}"
+# Push changes
 git push
 
 
