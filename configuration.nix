@@ -206,13 +206,13 @@ in
   networking.wg-quick.interfaces = {
     wg0 = {
       address = [ "10.113.64.2/24" "2001:1680:6003:64::2/64" ];
-      privateKeyFile = "/home/ms/wireguard.pk";
+      privateKeyFile = "/home/ms/.wireguard.pk";
       peers = [
         {
           publicKey = "wt4YLrF3A8Iu25OxqWWgr17bnxK/U4qomIOVpwq88lY=";
           allowedIPs = [ "10.113.48.0/24" "10.113.50.0/24" "10.113.64.0/24" "::/0" ];
           endpoint = "vpn.pr0.guru:52420";
-          # persistentKeepalive = 25;
+          persistentKeepalive = 25;
         }
       ];
     };
