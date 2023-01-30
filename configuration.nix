@@ -60,8 +60,7 @@ in
     enable = true;
     shellAliases = {
       ll = "ls -lah";
-      update = "sudo nixos-rebuild switch";
-      config = "sudo nano /etc/nixos/configuration.nix";
+      config = "sudo nano ${FLAKE_DIR}/configuration.nix";
     };
     ohMyZsh = {
       enable = true;
@@ -130,6 +129,7 @@ in
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
   ]) ++ (with pkgs.gnome; [
+    geary
     epiphany
     tali
     iagno
