@@ -60,7 +60,7 @@ in
     enable = true;
     shellAliases = {
       ll = "ls -lah";
-      config = "sudo nano ${FLAKE_DIR}/configuration.nix";
+      config = "sudo nano $FLAKE_DIR/configuration.nix";
     };
     ohMyZsh = {
       enable = true;
