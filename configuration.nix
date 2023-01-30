@@ -88,6 +88,7 @@ in
   # Environment
   environment.variables = {
     HOSTNAME = config.networking.hostName;
+    FLAKE_DIR = "/home/ms/Sources/nix-config";
     TERMINAL = "alacritty";
     EDITOR = "nano";
     VISUAL = "nano";

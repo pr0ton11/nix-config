@@ -7,16 +7,15 @@ else
 fi
 
 # Set correct directory, no matter where this is called from
-script=$(readlink -f "$0")
-dir=$(dirname "$SCRIPT")
+
 # Ensure that we are in the script path
-cd ${dir}
+cd ${FLAKE_DIR}
 # Set timestamp for automated commit message
 timestamp=$(date +%s)
 # Update current branch
 git pull
 # Update flake with latest software
-nix flake update ${dir}
+nix flake update ${FLAKE_DIR}
 # Add everything to the git tree
 git add -A
 # Commit updates
@@ -24,4 +23,4 @@ git commit -m "Updated the flake lock file @${timestamp}"
 # Push changes
 git push
 # Switching to the new version
-sudo nixos-rebuild ${action} --flake ${dir}/#${hostname} --impure
+sudo nixos-rebuild ${action} --flake ${FLAKE_DIR}/#${hostname} --impure
