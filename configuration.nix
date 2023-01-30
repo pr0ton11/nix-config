@@ -203,8 +203,9 @@ in
   };
 
   # Wireguard connection to pr0
+  systemd.services.wg-quick-pr0.wantedBy = lib.mkForce [ ];
   networking.wg-quick.interfaces = {
-    wg0 = {
+    pr0 = {
       address = [ "10.113.64.2/24" "2001:1680:6003:64::2/64" ];
       privateKeyFile = "/home/ms/.wireguard.pk";
       peers = [
