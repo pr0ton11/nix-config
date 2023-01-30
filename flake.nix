@@ -30,6 +30,7 @@
               home-manager.users.ms = {
                 imports = [
                   ./home/ms.nix
+                  ./home/mswsa.nix  # Wallpaper specific for resulution
                 ];
               };
             }
@@ -46,7 +47,7 @@
               home-manager.users.ms = {
                 imports = [
                   ./home/ms.nix
-                  ./home/mswsa.nix
+                  ./home/mswsm.nix
                 ];
               };
             }
@@ -63,6 +64,7 @@
               home-manager.users.ms = {
                 imports = [
                   ./home/ms.nix
+                  ./home/mswst.nix
                 ];
               };
             }
