@@ -97,4 +97,21 @@ in
   networking.wireless.enable = false;
   networking.interfaces.enp7s0.useDHCP = true;
 
+  # Wireguard connection to pr0
+  systemd.services.wg-quick-pr0.wantedBy = lib.mkForce [ ];  # Remove autostart from interfaces
+  networking.wg-quick.interfaces = {
+    pr0 = {
+      address = [ "10.113.64.2/24" "2001:1680:6003:64::2/64" ];
+      privateKeyFile = "/home/ms/.wireguard.pk";
+      peers = [
+        {
+          publicKey = "wt4YLrF3A8Iu25OxqWWgr17bnxK/U4qomIOVpwq88lY=";
+          allowedIPs = [ "10.113.48.0/24" "10.113.50.0/24" "10.113.64.0/24" "::/0" ];
+          endpoint = "vpn4.pr0.guru:52420";
+          persistentKeepalive = 25;
+        }
+      ];
+    };
+  };
+
 }
