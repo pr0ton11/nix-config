@@ -22,7 +22,7 @@
         mswsa = lib.nixosSystem {
           inherit system;
           modules = [
-	          ./hardware/mswsa.nix
+	    ./machine/mswsa.nix
             ./configuration.nix
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
@@ -39,7 +39,7 @@
         mswsm = lib.nixosSystem {
           inherit system;
           modules = [
-	          ./hardware/mswsm.nix
+	    ./machine/mswsm.nix
             ./configuration.nix
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
@@ -56,7 +56,7 @@
         mswst = lib.nixosSystem {
           inherit system;
           modules = [
-	          ./hardware/mswst.nix
+	    ./machine/mswst.nix
             ./configuration.nix
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
