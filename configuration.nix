@@ -222,7 +222,7 @@ in
   # DNS
   networking = {
     # Disables non predefined nameservers
-    # DNSSec with stamps is defined in /hardware
+    # DNSSec enabled with Stubby DNS Server
     #nameservers = [ "127.0.0.1" "::1" ];
     #networkmanager.dns = "none";
   };
