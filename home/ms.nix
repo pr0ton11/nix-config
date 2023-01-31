@@ -30,7 +30,7 @@
     # Cursor theme
     # https://github.com/keeferrourke/capitaine-cursors
     cursorTheme = {
-      name = "Capitaine-cursors";
+      name = "capitaine-cursors";
       package = pkgs.capitaine-cursors;
     };
     iconTheme = {
