@@ -1,7 +1,7 @@
 { config, lib, pkgs, user, ... }:
 
 {
-  home.gtk = {
+  gtk = {
     # cursorTheme =  "capitaine-cursors";
     cursorTheme.package = "capitaine-cursors";
     cursorTheme.name = "capitaine-cursors";
