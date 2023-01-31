@@ -77,6 +77,7 @@
     sshpass
     plex-media-player
     gnomeExtensions.tray-icons-reloaded
+    gnome3.gnome-tweaks
   ];
 
 }
