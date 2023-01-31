@@ -225,6 +225,9 @@ in
     };
   };
 
+  # HFTM Java Development
+  programs.java = { enable = true; programs.java.package = pkgs.jdk17; };
+
   # Configuration version
   system.stateVersion = "22.11";
 
