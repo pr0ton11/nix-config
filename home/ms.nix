@@ -30,11 +30,11 @@
     # Cursor theme
     # https://github.com/keeferrourke/capitaine-cursors
     cursorTheme = {
-      name = "capitaine-cursors";
+      name = "Capitaine-cursors";
       package = pkgs.capitaine-cursors;
     };
     iconTheme = {
-      name = "adwaita";
+      name = "Adwaita";
       package = pkgs.gnome3.adwaita-icon-theme;  # Supports 3rd pary icons (like Lutris)
     };
     gtk3.extraConfig = {
