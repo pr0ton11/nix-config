@@ -1,3 +1,6 @@
+# Hardware specific configuration for mswsm
+# Personal Thinkpad X13 Gen 2 AMD
+
 { config, lib, modulesPath, pkgs,  ... }:
 
 {
@@ -67,16 +70,17 @@
   # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   services.throttled.enable = lib.mkDefault true;
   
-  # Support WiFi
+  # Add Firmware for WiFi module
+  # Specific for Thinkpad X13 Gen2 AMD
   hardware.firmware = [ pkgs.rtw89-firmware ];
 
   # Basic networking configuration
   networking.hostName = "mswsm";
   # networking.wireless.enable = true;
-  networking.networkmanager.enable = true;  # Easier management for a notebook with WiFi
+  networking.networkmanager.enable = true;  # Easier management for a notebook with WiFi / WWAN
 
   # Wireguard connection to pr0
-  systemd.services.wg-quick-pr0.wantedBy = lib.mkForce [ ];  # Remove autostart from interfaces
+  systemd.services.wg-quick-pr0.wantedBy = lib.mkForce [ ];  # Remove autostart from interface
   networking.wg-quick.interfaces = {
     pr0 = {
       address = [ "10.113.64.3/24" "2001:1680:6003:64::3/64" ];

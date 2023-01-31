@@ -1,3 +1,5 @@
+# Hardware specific configuration for mswsm
+# Personal Thinkpad Carbon X1 Gen 6
 { config, lib, modulesPath, pkgs,  ... }:
 
 {

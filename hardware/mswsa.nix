@@ -1,3 +1,6 @@
+# Hardware specific configuration for mswsa
+# Personal AMD Workstation
+
 { config, lib, modulesPath, pkgs,  ... }:
 
 # LLVM and Mesa Workarounds for the AMD RX 7900 XTX
