@@ -109,7 +109,7 @@ in
   ];
 
   # SSD Trim Support
-  services.fstrim.enable = lib.MkDefault true;
+  services.fstrim.enable = lib.mkDefault true;
 
   # Disable X11
   # environment.noXlibs = true;  # Does not work atm, to many dependencies
