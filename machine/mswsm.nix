@@ -9,6 +9,7 @@
   boot.kernelModules = [ "kvm-amd" "acpi_call" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
   boot.kernelParams = [
+    "amd_pstate=passive"
     "amdgpu.backlight=0"
     "acpi_backlight=none"
   ];

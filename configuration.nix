@@ -108,6 +108,8 @@ in
     stubby  # DNS Server
   ];
 
+  # SSD Trim Support
+  services.fstrim.enable = lib.MkDefault true;
 
   # Disable X11
   # environment.noXlibs = true;  # Does not work atm, to many dependencies
