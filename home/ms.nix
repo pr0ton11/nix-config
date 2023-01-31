@@ -16,10 +16,22 @@
   };
 
   gtk = {
+    enable = true;
     # Cursor theme
     # https://github.com/keeferrourke/capitaine-cursors
     cursorTheme.package = "capitaine-cursors";
     cursorTheme.name = "capitaine-cursors";
+    gtk3.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+
+    gtk4.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
   };
 
   programs.home-manager.enable = true;
