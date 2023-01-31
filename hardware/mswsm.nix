@@ -71,7 +71,7 @@
   hardware.firmware = [ pkgs.rtw89-firmware ];
 
   # Basic networking configuration
-  networking.hostName = "mswsn";
+  networking.hostName = "mswsm";
   # networking.wireless.enable = true;
   networking.networkmanager.enable = true;  # Easier management for a notebook with WiFi
 }
