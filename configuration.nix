@@ -225,7 +225,8 @@ in
     # DNSSec with stamps is defined in /hardware
     nameservers = [ "127.0.0.1" "::1" ];
     networkmanager.dns = "none";
-  }
+  };
+
   services.stubby = {
     enable = true;
     settings = ''
@@ -240,7 +241,7 @@ in
         - address_data: 2a07:a8c1::0
           tls_auth_name: "ce4514.dns.nextdns.io"
     '';
-  }
+  };
 
   # Configuration version
   system.stateVersion = "22.11";
