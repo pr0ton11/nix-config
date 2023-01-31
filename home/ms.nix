@@ -65,7 +65,7 @@
   };
   
   # HFTM Java Development
-  programs.java = { enable = true; package = pkgs.openjdk17; };
+  programs.java = { enable = true; package = pkgs.adoptopenjdk-bin; };
   
   home.packages = with pkgs; [
     maven  # HFTM Java Development
