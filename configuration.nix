@@ -105,6 +105,7 @@ in
     vscode
     python3
     nix-config-switch  # Switch script to update the system automatically
+    stubby  # DNS Server
   ];
 
 
@@ -217,6 +218,29 @@ in
       ];
     };
   };
+
+  # DNS
+  networking = {
+    # Disables non predefined nameservers
+    # DNSSec with stamps is defined in /hardware
+    nameservers = [ "127.0.0.1" "::1" ];
+    networkmanager.dns = "none";
+  }
+  services.stubby = {
+    enable = true;
+    settings = ''
+      round_robin_upstreams: 1
+      upstream_recursive_servers:
+        - address_data: 45.90.28.0
+          tls_auth_name: "ce4514.dns.nextdns.io"
+        - address_data: 2a07:a8c0::0
+          tls_auth_name: "ce4514.dns.nextdns.io"
+        - address_data: 45.90.30.0
+          tls_auth_name: "ce4514.dns.nextdns.io"
+        - address_data: 2a07:a8c1::0
+          tls_auth_name: "ce4514.dns.nextdns.io"
+    '';
+  }
 
   # Configuration version
   system.stateVersion = "22.11";
