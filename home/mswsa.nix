@@ -3,7 +3,7 @@
 {
   home.misc.gtk = {
     # cursorTheme =  "capitaine-cursors";
-    cursorTheme.package = pkgs.gnome-capitaine-cursors;
+    cursorTheme.package = "capitaine-cursors";
     cursorTheme.name = "capitaine-cursors";
     cursorTheme.size = 24;
   };

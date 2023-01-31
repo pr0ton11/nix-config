@@ -42,6 +42,7 @@
     krew
     sshpass
     plex-media-player
+    gnomeExtensions.tray-icons-reloaded
   ];
 
 }
