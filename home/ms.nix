@@ -19,7 +19,7 @@
     enable = true;
     # Cursor theme
     # https://github.com/keeferrourke/capitaine-cursors
-    cursorTheme.package = "capitaine-cursors";
+    cursorTheme.package = pkgs.capitaine-cursors;
     cursorTheme.name = "capitaine-cursors";
     gtk3.extraConfig = {
       Settings = ''
