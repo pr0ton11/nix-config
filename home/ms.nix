@@ -8,10 +8,20 @@
 
   dconf.settings = {
     "org/gnome/desktop/background" = {
-        "picture-uri" = "/home/ms/.background-image";
+        "picture-uri" = "file:///home/ms/.background-image";
     };
     "org/gnome/desktop/screensaver" = {
-        "picture-uri" = "/home/ms/.background-image";
+        "picture-uri" = "file:///home/ms/.background-image";
+    };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      enable-hot-corners = false;
+    };
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      enabled-extensions = [
+        "trayIconsReloaded@selfmade.pl"
+      ];
     };
   };
 
@@ -19,14 +29,19 @@
     enable = true;
     # Cursor theme
     # https://github.com/keeferrourke/capitaine-cursors
-    cursorTheme.package = pkgs.capitaine-cursors;
-    cursorTheme.name = "capitaine-cursors";
+    cursorTheme = {
+      name = "capitaine-cursors";
+      package = pkgs.capitaine-cursors;
+    };
+    iconTheme = {
+      name = "adwaita";
+      package = pkgs.gnome3.adwaita-icon-theme  # Supports 3rd pary icons (like Lutris)
+    };
     gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
       '';
     };
-
     gtk4.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
