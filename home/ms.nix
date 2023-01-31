@@ -35,7 +35,7 @@
     };
     iconTheme = {
       name = "adwaita";
-      package = pkgs.gnome3.adwaita-icon-theme  # Supports 3rd pary icons (like Lutris)
+      package = pkgs.gnome3.adwaita-icon-theme;  # Supports 3rd pary icons (like Lutris)
     };
     gtk3.extraConfig = {
       Settings = ''
