@@ -46,6 +46,16 @@
 
   swapDevices = [ ]; # Disables SWAP
 
+  # Enable openGL and vulcan 
+  hardware.opengl.package = (pkgs.mesa).drivers;
+  hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.extraPackages = with pkgs; [
+      intel-media-driver
+  ];
+
+
   # Enable Firmware Upgrades
   hardware.cpu.intel.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true;

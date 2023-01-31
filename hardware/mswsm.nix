@@ -58,9 +58,17 @@
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.extraPackages = with pkgs; [
+      vaapiVdpau
+      libvdpau-va-gl
+  ];
+
+  # Power Management
+  # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  services.throttled.enable = lib.mkDefault true;
 
   # Basic networking configuration
   networking.hostName = "mswsn";
-  networking.wireless.enable = true;
-  networking.interfaces.wlp1s0.useDHCP = true;  
+  # networking.wireless.enable = true;
+  networking.networkmanager.enable = true;  # Easier management for a notebook with WiFi
 }

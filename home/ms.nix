@@ -15,6 +15,13 @@
     };
   };
 
+  gtk = {
+    # Cursor theme
+    # https://github.com/keeferrourke/capitaine-cursors
+    cursorTheme.package = "capitaine-cursors";
+    cursorTheme.name = "capitaine-cursors";
+  };
+
   programs.home-manager.enable = true;
   
   programs.git = {
