@@ -9,7 +9,7 @@ Please make sure to change ``` FLAKE_DIR ``` in configuration.nix to the path of
 
 * Boot nixOS, and setup network connectivity, disks
 * Mount disks to /mnt according to your disk setup (see hardware/ for more information)
-* Run ``` mkdir -p /mnt/etc/nixos && nix-shell -p nixUnstable git ```
+* Run ``` mkdir -p /mnt/etc && nix-shell -p nixUnstable git ```
 * Clone this repository to /mnt/etc/nixos
 * Set your hostname with ``` export hostname=msws* ```
 * Run ``` nixos-install --flake /mnt/etc/nixos/#$hostname --impure ```

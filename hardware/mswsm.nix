@@ -11,7 +11,7 @@
   ];
 
   # cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 2000 -y --pbkdf pbkdf2 luksFormat /dev/nvme0n1p3
-  boot.initrd.luks.devices."sys0" = { device = "/dev/disk/by-uuid/17ab0b12-23e9-409e-b2d4-6f8525d8a43b"; allowDiscards = true; };
+  boot.initrd.luks.devices."sys0" = { device = "/dev/disk/by-uuid/96098eb5-7852-4dcd-bf66-f5b492752218"; allowDiscards = true; };
 
   # mkfs.btrfs -L root /dev/mapper/sys0
   # mount and create subvolumes
@@ -36,13 +36,13 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/96bbf76c-983b-4a23-8ba6-465f970817f5";
+    { device = "/dev/disk/by-uuid/4b5ec206-7572-4d64-8e5f-ac23c0b1c664";
       fsType = "ext4";
       options = [ "noatime" "discard" ];
     };
 
   fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/3CFB-10F0";
+    { device = "/dev/disk/by-uuid/7ED8-9AA5";
       fsType = "vfat";
       options = [ "noatime" "discard" ];
     };
