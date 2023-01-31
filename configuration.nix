@@ -230,7 +230,7 @@ in
   services.stubby = {
     enable = true;
     settings = {
-      round_robin_upstreams = 1
+      round_robin_upstreams = 1;
       upstream_recursive_servers = [
         { address_data = "45.90.28.0"; tls_auth_name = "ce4514.dns.nextdns.io"; }
         { address_data = "2a07:a8c0::0"; tls_auth_name = "ce4514.dns.nextdns.io"; }
