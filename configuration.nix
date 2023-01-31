@@ -103,6 +103,7 @@ in
     firefox-wayland
     git
     gnome3.adwaita-icon-theme  # Supports 3rd pary icons (like Lutris)
+    gnome3.gnome-tweaks  # Tweaking gnome and setting cursor theme correctly
     vscode
     python3
     nix-config-switch  # Switch script to update the system automatically
