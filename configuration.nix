@@ -81,7 +81,7 @@ in
   environment.shells = [ pkgs.zsh ];
   users.users.ms = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" "adbusers" ];
     description = "Marc Singer";
     hashedPassword = "$6$yOQEG.YLfts8U/p3$rLRCN4difqTaYPP9oIvFs4klCIAw2aq3EFKUvfV4671qfuW8p90m7CaPepg6WE9u5CiEHklui/WXO66.U3LCm/";
     shell = pkgs.zsh;
