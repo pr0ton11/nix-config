@@ -69,6 +69,12 @@ in
     };
   };
 
+  # Android
+  programs.adb.enable = true;
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
+
   # User
   users.mutableUsers = false;
   users.defaultUserShell = pkgs.zsh;
