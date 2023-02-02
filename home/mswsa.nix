@@ -4,7 +4,7 @@
 
   services.syncthing = {
     enable = true;
-    user = "ms";
+    # user = "ms";
     # dataDir = "/home/ms/Documents";
     # configDir = "/home/ms/.config/syncthing";
   };
