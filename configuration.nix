@@ -233,6 +233,16 @@ in
     };
   };
 
+  # Syncthing
+  # TODO: Create configuration here
+  # https://nixos.wiki/wiki/Syncthing
+  services.syncthing = {
+    enable = true;
+    user = "ms";
+    dataDir = "/home/ms/Documents";
+    configDir = "/home/ms/.config/syncthing";
+  };
+
   # HFTM Java Development
   programs.java = { enable = true; package = pkgs.jdk17; };
 
