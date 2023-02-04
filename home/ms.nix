@@ -55,7 +55,11 @@
     enable = true;
     userName = "Marc Singer";
     userEmail = "ms@pr0.tech";
-    init.defaultBranch = "main";
+    extraConfig = {
+     init = {
+       defaultBranch = "main";
+      };
+    };
   };
   
   programs.go.enable = true;
