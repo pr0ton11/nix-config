@@ -10,8 +10,6 @@
   boot.extraModulePackages = [ ];
   boot.kernelParams = [
     "amd_iommu=on"
-    "pcie_aspm=off"
-    "amdgpu.ppfeaturemask=0xffd3fff"  # Specific for the AMD Radeon RX 7900 XTX
   ];
 
   # cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 2000 -y --pbkdf pbkdf2 luksFormat /dev/nvme0n1p3
@@ -59,11 +57,7 @@
   hardware.cpu.amd.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true;
   
-  # Enable openGL and vulkan
-  hardware.opengl.package = (pkgs.mesa.override {
-    llvmPackages = pkgs.llvmPackages_15;
-    enableOpenCL = false;
-  }).drivers;
+  # Enable VAAPI
   hardware.opengl.extraPackages = with pkgs; [
       vaapiVdpau
       libvdpau-va-gl
