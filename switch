@@ -15,7 +15,7 @@ timestamp=$(date +%s)
 # Update current branch
 git pull
 # Update flake with latest software
-nix channel update
+nix-channel update
 nix flake update ${FLAKE_DIR}
 # Add everything to the git tree
 git add -A
