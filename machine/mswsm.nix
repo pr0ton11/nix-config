@@ -69,7 +69,7 @@
 
   # Power Management
   # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  services.throttled.enable = lib.mkDefault true;
+  # services.throttled.enable = lib.mkDefault true;
   
   # Add Firmware for WiFi module
   # Specific for Thinkpad X13 Gen2 AMD
