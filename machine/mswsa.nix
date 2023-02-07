@@ -67,6 +67,7 @@
   hardware.opengl.extraPackages = with pkgs; [
       vaapiVdpau
       libvdpau-va-gl
+      libclc
   ];
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
