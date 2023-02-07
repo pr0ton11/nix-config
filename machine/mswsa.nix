@@ -3,18 +3,6 @@
 
 { config, lib, modulesPath, pkgs,  ... }:
 
-# LLVM and Mesa Workarounds for the AMD RX 7900 XTX
-# TODO: Replace this overlay when LLVM15 and 23.05 is released
-let
-  mesa_llvm_overlay = self: super:
-  {
-    mesa = super.mesa.override {
-        llvmPackages = super.pkgs.llvmPackages_git;
-    };
-  };
-  staging = import (builtins.fetchTarball { url = "https://github.com/nixos/nixpkgs/tarball/staging-next"; sha256 = "0dp2jakn0rpdvcsxzbpg37ifqh2lzcbdm2ycsqrs8sjdfrl7bj2m"; } ) { config = config.nixpkgs.config; };
-  llvm15 = import (pkgs.fetchFromGitHub { owner = "rrbutani"; repo="nixpkgs"; rev="31db9e9d75d680ae4b747e7c181c12d45ca236be"; sha256 = "039hc11n3yhncv63dhqask89qkk4i0mfydp0jczcmn6a9pk9c7yg"; } ) { config = config.nixpkgs.config; };
-in
 {
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
@@ -73,7 +61,7 @@ in
   
   # Enable openGL and vulkan
   hardware.opengl.package = (pkgs.mesa.override {
-    llvmPackages = llvm15.llvmPackages_15;
+    llvmPackages = pkgs.llvmPackages_15;
     enableOpenCL = false;
   }).drivers;
   hardware.opengl.extraPackages = with pkgs; [
