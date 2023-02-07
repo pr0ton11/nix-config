@@ -3,10 +3,6 @@
 
 { config, lib, modulesPath, pkgs,  ... }:
 
-let
-  staging = import (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/staging-next") { config = config.nixpkgs.config; };
-in
-
 {
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
@@ -65,7 +61,7 @@ in
   
   # Enable openGL and vulkan
   hardware.opengl.package = (pkgs.mesa.override {
-    llvmPackages = staging.llvmPackages_15;
+    llvmPackages = pkgs.llvmPackages_15;
     enableOpenCL = false;
   }).drivers;
   hardware.opengl.extraPackages = with pkgs; [
