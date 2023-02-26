@@ -249,7 +249,6 @@ in
 
   # Virtualization
   virtualisation.libvirtd.enable = true;
-  programs.dconf.enable = true;  
 
   # Configuration version
   system.stateVersion = "22.11";
