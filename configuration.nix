@@ -81,7 +81,7 @@ in
   environment.shells = [ pkgs.zsh ];
   users.users.ms = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" "adbusers" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" "adbusers" "libvirtd" ];
     description = "Marc Singer";
     hashedPassword = "$6$yOQEG.YLfts8U/p3$rLRCN4difqTaYPP9oIvFs4klCIAw2aq3EFKUvfV4671qfuW8p90m7CaPepg6WE9u5CiEHklui/WXO66.U3LCm/";
     shell = pkgs.zsh;
@@ -112,6 +112,7 @@ in
     python3
     nix-config-switch  # Switch script to update the system automatically
     stubby  # DNS Server
+    virt-manager
   ];
 
   # SSD Trim Support
@@ -245,6 +246,10 @@ in
 
   # HFTM Java Development
   programs.java = { enable = true; package = pkgs.jdk17; };
+
+  # Virtualization
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;  
 
   # Configuration version
   system.stateVersion = "22.11";
