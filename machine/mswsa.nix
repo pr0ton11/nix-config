@@ -75,6 +75,7 @@
         # List library dependencies here
       ];
     })
+    virt-manager
   ];
 
   # Basic networking configuration
@@ -102,6 +103,5 @@
   # VMs
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [ virt-manager ];
 }
 
