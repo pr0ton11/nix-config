@@ -7,7 +7,7 @@ in
   imports = [];
 
   # Kernel configuration
-  boot.kernelPackages = pkgs.linuxPackages_6_1;
+  boot.kernelPackages = pkgs.linuxPackages_6_2;
 
   # Bootloader configuration
   boot.loader.grub.enable = true;
