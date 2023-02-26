@@ -81,6 +81,8 @@
     gnomeExtensions.tray-icons-reloaded
     gnome3.gnome-tweaks
     gnumake
+    texstudio
+    texlive.combined.scheme-full
   ];
 
 }
