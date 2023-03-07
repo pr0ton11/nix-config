@@ -64,7 +64,7 @@
   
   # Power Management
   # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  services.throttled.enable = lib.mkDefault true;
+  # services.throttled.enable = lib.mkDefault true;
   
   # Basic networking configuration
   networking.hostName = "mswst";
