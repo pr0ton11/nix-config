@@ -110,7 +110,7 @@ in
     firefox-wayland
     git
     vscode
-    pypy3
+    python3
     nix-config-switch  # Switch script to update the system automatically
     stubby  # DNS Server
     virt-manager
