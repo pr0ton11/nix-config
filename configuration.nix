@@ -3,7 +3,6 @@
 let
    # Switch command
    nix-config-switch = pkgs.writeShellScriptBin "switch" (builtins.readFile ./switch);
-   inherit (pkgs) python3;
 in
 {
   imports = [];
@@ -111,20 +110,11 @@ in
     firefox-wayland
     git
     vscode
+    pypy3
     nix-config-switch  # Switch script to update the system automatically
     stubby  # DNS Server
     virt-manager
   ];
-
-  # Python
-  pkgs.mkShell {
-    packages = [
-      (python3.withPackages (ps: with ps; [
-        pip
-        setuptools
-      ]))
-    ];
-  };
 
   # SSD Trim Support
   services.fstrim.enable = lib.mkDefault true;
