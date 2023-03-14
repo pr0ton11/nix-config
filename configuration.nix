@@ -66,7 +66,7 @@ in
     ohMyZsh = {
       enable = true;
       plugins = [ "git" ];
-      theme = "robbyrussell";
+      theme = "../../../../../../../../../../../${pkgs.zsh-powerlevel9k}/share/zsh-powerlevel9k/powerlevel9k";
     };
   };
 
@@ -99,13 +99,14 @@ in
     EDITOR = "nano";
     VISUAL = "nano";
     KUBE_EDITOR = "nano";
-    NIXOS_OZONE_WL = "1";  # VSCode Wayland Support
+    NIXOS_OZONE_WL = "1";  # VSC Wayland Integration
   };
     
   # Packages
   nixpkgs.config.allowUnfree = true;  # Allow non-free packages  
   environment.systemPackages = with pkgs; [
     alacritty
+    zsh-powerlevel9k  # Theme for ZSH
     curl
     firefox-wayland
     git
@@ -210,6 +211,7 @@ in
       autoPrune.enable = true;
       enableOnBoot = true;
     };
+    libvirtd.enable = true;
   };
 
   # DNS
@@ -247,9 +249,6 @@ in
 
   # HFTM Java Development
   programs.java = { enable = true; package = pkgs.jdk17; };
-
-  # Virtualization
-  virtualisation.libvirtd.enable = true;
 
   # Configuration version
   system.stateVersion = "22.11";

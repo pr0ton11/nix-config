@@ -62,13 +62,24 @@
     };
   };
   
-  programs.go.enable = true;
-  
-  # See https://github.com/NixOS/nixpkgs/blob/b21240601d07108a391e5767c6d1d3b47bd7ff6f/nixos/modules/programs/chromium.nix
-  programs.chromium = {
+  programs.go = {
     enable = true;
+    package = pkgs.go_1_19;
+    goPath = "go";
+    goBin = "go/bin";
+    goPrivate = [ "git.pr0.tech/ms" ];
   };
-  
+
+  htop = {
+    enable = true;
+    settings = {
+      tree_view = true;
+      show_cpu_frequency = true;
+      show_cpu_usage = true;
+      show_program_path = false;
+    };
+  };
+
   home.packages = with pkgs; [
     maven  # HFTM Java Development
     ansible
@@ -83,6 +94,12 @@
     gnumake
     texstudio
     texlive.combined.scheme-full
+  ];
+
+  sessionPath = [
+    "$HOME/go/bin"
+    "$HOME/.local/bin"
+    "$HOME/.krew/bin"
   ];
 
 }
