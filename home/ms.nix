@@ -70,7 +70,7 @@
     goPrivate = [ "git.pr0.tech/ms" ];
   };
 
-  htop = {
+  programs.htop = {
     enable = true;
     settings = {
       tree_view = true;
