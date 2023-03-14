@@ -96,7 +96,7 @@
     texlive.combined.scheme-full
   ];
 
-  sessionPath = [
+  home.sessionPath = [
     "$HOME/go/bin"
     "$HOME/.local/bin"
     "$HOME/.krew/bin"
