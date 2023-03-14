@@ -68,6 +68,9 @@ in
       plugins = [ "git" ];
       theme = "../../../../../../../../../../../${pkgs.zsh-powerlevel9k}/share/zsh-powerlevel9k/powerlevel9k";
     };
+    enableCompletion = true;
+    enableAutosuggestions = true;
+    syntaxHighlighting.enable = true;
   };
 
   # Android
