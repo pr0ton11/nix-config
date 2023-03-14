@@ -1,0 +1,57 @@
+# Reference: https://gitlab.com/dwt1/dotfiles/-/blob/master/.config/alacritty/alacritty.yml
+env:
+  TERM: alacritty
+window:
+  dynamic_padding: true
+class:
+  instance: Alacritty
+gtk_theme_variant: dark
+opacity: 0.95
+scrolling:
+  history: 0
+  multiplier: 3
+font:
+  normal:
+    family: Source Code Pro
+    style: Regular
+  bold:
+    family: Source Code Pro
+    style: Bold
+  italic:
+    family: Source Code Pro
+    style: Italic
+  bold_italic:
+    family: Source Code Pro
+    style: Bold Italic
+size: 12.0
+draw_bold_text_with_bright_colors: true
+schemes:
+  ### Palenight ###
+  Palenight: &Palenight
+    # Default colors
+    primary:
+      background: '#292d3e'
+      foreground: '#d0d0d0'
+    # Normal colors
+    normal:
+      black:   '#292d3e'
+      red:     '#f07178'
+      green:   '#c3e88d'
+      yellow:  '#ffcb6b'
+      blue:    '#82aaff'
+      magenta: '#c792ea'
+      cyan:    '#89ddff'
+      white:   '#d0d0d0'
+    # Bright colors
+    bright:
+      black:   '#434758'
+      red:     '#ff8b92'
+      green:   '#ddffa7'
+      yellow:  '#ffe585'
+      blue:    '#9cc4ff'
+      magenta: '#e1acff'
+      cyan:    '#a3f7ff'
+      white:   '#ffffff'
+colors: *Palenight
+mouse:
+  hide_when_typing: false

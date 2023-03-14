@@ -102,4 +102,9 @@
     "$HOME/.krew/bin"
   ];
 
+  # Update configuration of Alacritty
+  xdg.configFile."alacritty/alacritty.yml".text = ''
+    ${builtins.readFile ./alacritty.yml}
+  '';
+
 }
