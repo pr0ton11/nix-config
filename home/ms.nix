@@ -80,6 +80,8 @@
     };
   };
 
+  programs.neofetch.enabled = true;  # Bragging
+
   home.packages = with pkgs; [
     maven  # HFTM Java Development
     ansible
