@@ -118,6 +118,7 @@ in
     nix-config-switch  # Switch script to update the system automatically
     stubby  # DNS Server
     virt-manager
+    exfat  # ExFAT Support
   ];
 
   # SSD Trim Support
