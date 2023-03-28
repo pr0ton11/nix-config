@@ -198,7 +198,7 @@ in
   };
   system.autoUpgrade = {  # System Upgrade
     enable = true;
-    allowReboot = true;
+    allowReboot = false;
     flake = "github:pr0ton11/nix-config";
     flags = [
       "--recreate-lock-file"
