@@ -66,6 +66,7 @@
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
   hardware.steam-hardware.enable = true;  # Enable steam udev profiles for controllers
+  hardware.opengl.mesaPackage = pkgs.mesa_23;
 
   # Lutris installation
   # Flatpak lutris does not work
