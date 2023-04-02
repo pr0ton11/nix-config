@@ -251,9 +251,6 @@ in
     configDir = "/home/ms/.config/syncthing";
   };
 
-  # HFTM Java Development
-  programs.java = { enable = true; package = pkgs.jdk17; };
-
   # Configuration version
   system.stateVersion = "22.11";
 
