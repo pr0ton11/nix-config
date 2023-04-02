@@ -64,7 +64,7 @@
   
   programs.go = {
     enable = true;
-    package = pkgs.go_1_19;
+    package = pkgs.go_1_20;
     goPath = "go";
     goBin = "go/bin";
     goPrivate = [ "git.pr0.tech/ms" ];
