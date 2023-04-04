@@ -95,7 +95,6 @@
     texstudio
     texlive.combined.scheme-full
     neofetch
-    armcord
   ];
 
   home.sessionPath = [
