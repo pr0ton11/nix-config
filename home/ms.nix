@@ -81,17 +81,14 @@
   };
 
   home.packages = with pkgs; [
-    maven  # HFTM Java Development
     ansible
     ansible-lint
-    sshpass
     kubectl
     krew
     sshpass
     plex-media-player
     gnomeExtensions.tray-icons-reloaded
     gnome3.gnome-tweaks
-    gnumake
     texstudio
     texlive.combined.scheme-full
     neofetch
