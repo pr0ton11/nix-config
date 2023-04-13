@@ -92,6 +92,7 @@
     texstudio
     texlive.combined.scheme-full
     neofetch
+    s3cmd
   ];
 
   home.sessionPath = [
