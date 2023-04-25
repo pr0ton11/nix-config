@@ -24,4 +24,4 @@ git commit -m "Updated the flake lock file @${timestamp}"
 # Push changes
 git push
 # Switching to the new version
-sudo nixos-rebuild ${action} --flake ${FLAKE_DIR}/#${hostname} --impure
+sudo nixos-rebuild ${action} --flake ${FLAKE_DIR}/#${hostname}
