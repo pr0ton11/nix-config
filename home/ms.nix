@@ -93,6 +93,7 @@
     texlive.combined.scheme-full
     neofetch
     s3cmd
+    android-studio
   ];
 
   home.sessionPath = [
