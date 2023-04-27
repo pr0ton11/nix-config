@@ -31,6 +31,8 @@ in
   services.cron.enable = true;
   services.flatpak.enable = true;
 
+  groups.plugdev = {};
+
   # Time
   time.timeZone = "Europe/Zurich";
 
