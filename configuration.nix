@@ -31,8 +31,6 @@ in
   services.cron.enable = true;
   services.flatpak.enable = true;
 
-  groups.plugdev = {};
-
   # Time
   time.timeZone = "Europe/Zurich";
 
@@ -252,8 +250,6 @@ in
     dataDir = "/home/ms/Documents";
     configDir = "/home/ms/.config/syncthing";
   };
-
-  hardware.ledger.enable = true;
 
   # Configuration version
   system.stateVersion = "22.11";
