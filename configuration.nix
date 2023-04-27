@@ -251,6 +251,8 @@ in
     configDir = "/home/ms/.config/syncthing";
   };
 
+  hardware.ledger.enable = true;
+
   # Configuration version
   system.stateVersion = "22.11";
 
