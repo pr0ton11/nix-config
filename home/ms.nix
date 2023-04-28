@@ -94,6 +94,7 @@
     neofetch
     s3cmd
     android-studio
+    nodejs
   ];
 
   home.sessionPath = [
