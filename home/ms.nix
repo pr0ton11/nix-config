@@ -95,6 +95,7 @@
     s3cmd
     android-studio
     nodejs
+    geckodriver
   ];
 
   home.sessionPath = [
