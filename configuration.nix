@@ -256,7 +256,7 @@ in
 	stdenv.cc.cc.lib
     ];
     LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
-  }
+  };
 
   # Configuration version
   system.stateVersion = "22.11";
