@@ -12,7 +12,6 @@ in
 
   # Bootloader configuration
   boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
   boot.loader.grub.copyKernels = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.fsIdentifier = "uuid";
@@ -250,6 +249,14 @@ in
     dataDir = "/home/ms/Documents";
     configDir = "/home/ms/.config/syncthing";
   };
+
+  # Allowing python C++ shared object linking
+  nixpgks.mkShell {
+    nativeBuildInputs = with nixpkgs; [
+	stdenv.cc.cc.lib
+    ];
+    LD_LIBRARY_PATH = "${nixpkgs.stdenv.cc.cc.lib}/lib";
+  }
 
   # Configuration version
   system.stateVersion = "22.11";
