@@ -251,11 +251,11 @@ in
   };
 
   # Allowing python C++ shared object linking
-  nixpgks.mkShell {
-    nativeBuildInputs = with nixpkgs; [
+  pgks.mkShell {
+    nativeBuildInputs = with pkgs; [
 	stdenv.cc.cc.lib
     ];
-    LD_LIBRARY_PATH = "${nixpkgs.stdenv.cc.cc.lib}/lib";
+    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
   }
 
   # Configuration version
