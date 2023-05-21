@@ -250,14 +250,6 @@ in
     configDir = "/home/ms/.config/syncthing";
   };
 
-  # Allowing python C++ shared object linking
-  pgks.mkShell {
-    nativeBuildInputs = with pkgs; [
-	stdenv.cc.cc.lib
-    ];
-    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
-  };
-
   # Configuration version
   system.stateVersion = "22.11";
 
