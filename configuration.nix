@@ -73,10 +73,10 @@ in
   };
 
   # Android
-  programs.adb.enable = true;
-  services.udev.packages = [
-    pkgs.android-udev-rules
-  ];
+  # programs.adb.enable = true;
+  # services.udev.packages = [
+  #   pkgs.android-udev-rules
+  # ];
 
   # User
   users.mutableUsers = false;
@@ -115,7 +115,7 @@ in
     vscode
     python3
     nix-config-switch  # Switch script to update the system automatically
-    stubby  # DNS Server
+#   stubby  # DNS Server
     virt-manager
     exfat  # ExFAT Support
   ];

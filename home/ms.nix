@@ -64,7 +64,7 @@
   
   programs.go = {
     enable = true;
-    package = pkgs.go_1_20;
+    package = pkgs.go_1_22;
     goPath = "go";
     goBin = "go/bin";
     goPrivate = [ "git.pr0.tech/ms" ];
@@ -86,15 +86,15 @@
     kubectl
     krew
     sshpass
-    plex-media-player
+    # plex-media-player
     gnomeExtensions.tray-icons-reloaded
     gnome3.gnome-tweaks
-    texstudio
-    texlive.combined.scheme-full
+    # texstudio
+    # texlive.combined.scheme-full
     neofetch
     s3cmd
-    android-studio
-    nodejs
+    # android-studio
+    # nodejs
     geckodriver
   ];
 
