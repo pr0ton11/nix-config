@@ -1,21 +1,16 @@
 # Hardware specific configuration for mswsm
-# Personal Thinkpad X13 Gen 2 AMD
-
+# Personal Thinkpad X1 Nano
 { config, lib, modulesPath, pkgs,  ... }:
 
 {
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelModules = [ "kvm-amd" "acpi_call" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [  ];
+  boot.kernelModules = [ "kvm-intel" "acpi_call" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
-  boot.kernelParams = [
-    "amd_pstate=passive"
-    "amdgpu.backlight=0"
-    "acpi_backlight=none"
-  ];
+  boot.kernelParams = [];
 
   # cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 2000 -y --pbkdf pbkdf2 luksFormat /dev/nvme0n1p3
-  boot.initrd.luks.devices."sys0" = { device = "/dev/disk/by-uuid/96098eb5-7852-4dcd-bf66-f5b492752218"; allowDiscards = true; };
+  boot.initrd.luks.devices."sys0" = { device = "/dev/disk/by-uuid/667a096b-2eee-4369-b070-51f4127a1919"; allowDiscards = true; };
 
   # mkfs.btrfs -L root /dev/mapper/sys0
   # mount and create subvolumes
@@ -40,43 +35,42 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/4b5ec206-7572-4d64-8e5f-ac23c0b1c664";
+    { device = "/dev/disk/by-uuid/e0a2c341-357b-4016-ac53-2179eb0806d3";
       fsType = "ext4";
       options = [ "noatime" "discard" ];
     };
 
   fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/7ED8-9AA5";
+    { device = "/dev/disk/by-uuid/E11B-00AC";
       fsType = "vfat";
       options = [ "noatime" "discard" ];
     };
 
   swapDevices = [ ]; # Disables SWAP
 
-  # Enable Firmware Upgrades
-  hardware.cpu.amd.updateMicrocode = true;
-  hardware.enableRedistributableFirmware = true;
-  
   # Enable openGL and vulcan 
   hardware.opengl.package = (pkgs.mesa).drivers;
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
   hardware.opengl.extraPackages = with pkgs; [
-      vaapiVdpau
-      libvdpau-va-gl
+      intel-media-driver
   ];
 
+
+  # Enable Firmware Upgrades
+  hardware.cpu.intel.updateMicrocode = true;
+  hardware.enableRedistributableFirmware = true;
+  
   # Power Management
   # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   # services.throttled.enable = lib.mkDefault true;
   
   # Basic networking configuration
-  networking.hostName = "mswsm";
+  networking.hostName = "mswst";
   # networking.wireless.enable = true;
-  networking.networkmanager.enable = true;  # Easier management for a notebook with WiFi / WWAN
+  networking.networkmanager.enable = true;  # Easier management for a notebook with WiFi
 
-  # Wireguard connection to pr0
   systemd.services.wg-quick-pr0.wantedBy = lib.mkForce [ ];  # Remove autostart from interface
   networking.wg-quick.interfaces = {
     pr0 = {
